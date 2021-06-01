@@ -15,3 +15,8 @@ fi
 
 echo "This was the result of the OSVER snippet: $OSVER" | tee /var/log/imagebuilder-demo.log
 echo "This was passed dynamically via cli option: $1" | tee -a /var/log/imagebuilder-demo.log
+
+if [[ $OSVER == 8 ]]; then
+    yum -y install $1
+    echo "Installed package: $1" | tee -a /var/log/imagebuilder-demo.log
+fi
