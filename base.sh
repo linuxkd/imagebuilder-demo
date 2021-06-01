@@ -9,8 +9,7 @@ elif [[ `uname -r | grep el7` =~ el7 ]]; then
 elif [[ `uname -r | grep el8` =~ el8 ]]; then
   export OSVER=8
 else
-  echo "OS Version not supported"
-  exit 255
+  export OSVER="Unknown"
 fi
 
 echo "This was the result of the OSVER snippet: $OSVER" | tee /var/log/imagebuilder-demo.log
